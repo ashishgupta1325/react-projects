@@ -4,13 +4,13 @@ import TasksList from './components/TasksList';
 function App() {
   const [tasksText, setTasksText] =  useState([])
 
-  function maintainList() {
+  function addTask(newTask) {
     setTasksText((prevList) => [...prevList, newTask])
   }
 
   return (
     <>
-      <Task onAddTask={maintainList} />
+      <Task addTask={addTask} />
       <TasksList tasks={tasksText} />
     </>
   )
